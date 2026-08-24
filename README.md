@@ -3,7 +3,7 @@
 [![downloads](https://img.shields.io/github/downloads/DigitallyRefined/android-ip-camera/total.svg)](https://github.com/DigitallyRefined/android-ip-camera/releases)
 [![downloads](https://img.shields.io/github/downloads/DigitallyRefined/android-ip-camera/latest/total.svg)](https://github.com/DigitallyRefined/android-ip-camera/releases)
 
-An Android H.264 / MJPEG IP Camera app
+An Android H.264 / MJPEG IP Camera app with a bundled dual-camera monitoring dashboard.
 
 ![Desktop Browser](screenshot.webp)
 
@@ -25,6 +25,7 @@ alt="Get it on F-Droid" align="center" height="70" /></a>
 
 ## Features
 
+* 📱 Installable APK monitor for viewing and naming two Wi-Fi cameras at the same time; camera addresses are stored locally on the monitoring device
 * 🌎 Built in server, just open the video stream in a web browser, video app or even set it as a camera for [Frigate](https://github.com/blakeblackshear/frigate) or a Home Assistant MJPEG IP Camera (using `https://[ip_address]:4444/video/mjpeg`)
 * 📴 Option to turn the display off while streaming
 * 🤳 Switch between the main or selfie camera

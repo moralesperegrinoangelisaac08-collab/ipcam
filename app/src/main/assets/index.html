@@ -27,7 +27,8 @@
   </main>
   <dialog id="settings"><form method="dialog" id="settingsForm"><div class="modal-head"><div><h2>Configurar cámaras</h2><p>Introduce la dirección base de cada cámara Wi‑Fi.</p></div><button class="icon-btn" value="cancel" aria-label="Cerrar">×</button></div><div class="modal-body"><div class="field"><label for="name1">Nombre de cámara 1</label><input id="name1" maxlength="32" placeholder="Entrada principal"></div><div class="field"><label for="url1">Dirección de cámara 1</label><input id="url1" inputmode="url" placeholder="http://192.168.1.41:4444"></div><div class="field"><label for="name2">Nombre de cámara 2</label><input id="name2" maxlength="32" placeholder="Patio trasero"></div><div class="field"><label for="url2">Dirección de cámara 2</label><input id="url2" inputmode="url" placeholder="http://192.168.1.42:4444"></div><div class="modal-actions"><button class="secondary" value="cancel">Cancelar</button><button class="primary-btn" value="default" id="save">Guardar cambios</button></div></div></form></dialog>
   <script>
-    const fallback=[{name:'Cámara principal',url:location.origin},{name:'Segunda cámara',url:''}];
+    const hostedByCamera=location.protocol==='http:'||location.protocol==='https:';
+    const fallback=[{name:'Cámara principal',url:hostedByCamera?location.origin:''},{name:'Segunda cámara',url:''}];
     let cameras=JSON.parse(localStorage.getItem('vigia-cameras')||'null')||fallback,selected=0;
     const grid=document.querySelector('#grid'),dialog=document.querySelector('#settings');
     const clean=url=>url.trim().replace(/\/$/,'');

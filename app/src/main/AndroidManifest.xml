@@ -23,12 +23,17 @@
     <uses-feature android:name="android.hardware.camera.any" />
 
     <application
-        android:label="Android IP Camera"
+        android:label="VIGIA Monitor"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         <activity
             android:name=".activities.MainActivity"
+            android:label="Cámara de este dispositivo"
+            android:exported="false" />
+        <activity
+            android:name=".activities.MonitorActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
